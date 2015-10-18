@@ -1,10 +1,11 @@
 Package: LCPRO
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Processing and Analysis of LCMS metabolomics data
 Version: 0.1
 Date: 2015-10-18
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Author: Tom Wilson
+Maintainer: Tom Wilson <tpw2@aber.ac.uk>
+Description: Various functions for processing and analysis metabolomics data sets acquired with high resolution LCMS. Functions are also included for curating LCMS standards, for downstream peak matching and putative annotation using retention time info and MS fragmentation patterns.
+Depends: webchem, Rdisop
+License: GPL (>= 2)
 LazyData: TRUE
