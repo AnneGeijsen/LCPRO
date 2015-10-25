@@ -1,4 +1,4 @@
 library(testthat)
-library(metProc)
+library(LCPRO)
 
 test_check("LCPRO")
