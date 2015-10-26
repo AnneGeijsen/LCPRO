@@ -45,7 +45,7 @@ peakoptIPO <- function(filepath, parallel = TRUE, QC = TRUE)
       myslaves <- slavesavail  }
 
 
-  optResults <- optimizeXcmsSet(myfiles, params = optParams, nSlaves = 2, subdir = NULL)
+  optResults <- optimizeXcmsSet(myfiles, params = optParams, nSlaves = 3, subdir = NULL)
 
 
   optSettings <- optResults$best_settings$parameters
