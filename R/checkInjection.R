@@ -46,7 +46,7 @@ checkInjection <- function(filepath,runinfo,plot = TRUE, parallel = FALSE)
 
   if(parallel == TRUE){
     cluster = parallel::makePSOCKcluster(parallel::detectCores())
-    clusterExport(cluster,varlist = c("rawfiles", "xcmsRaw"))
+    parallel::clusterExport(cluster,varlist = c("rawfiles", "xcmsRaw"))
     TIC <- parallel::parSapply(cluster, rawfiles, function(x)(sum(xcmsRaw(x)@tic)))
     stopCluster(cluster);gc()
   }
@@ -57,7 +57,7 @@ checkInjection <- function(filepath,runinfo,plot = TRUE, parallel = FALSE)
 
   file.idx <- match(fileinfo, runinfo$Sample)
 
-  res <- data.frame(cbind(TIC, runinfo[idx,]))
+  res <- data.frame(cbind(TIC, runinfo[file.idx,]))
   rownames(res) <- NULL
 
   res <- res[order(res$Injection),]
@@ -77,8 +77,8 @@ checkInjection <- function(filepath,runinfo,plot = TRUE, parallel = FALSE)
   MdTIC = median(log(res$TIC))
   SdTIC = sd(log(res$TIC))
 
-  m= median(log(tmp$TIC))
-  s = sd(log(tmp$TIC))
+  m= median(log(res$TIC))
+  s = sd(log(res$TIC))
   out_idx <- which(log(res$TIC) < (MdTIC - SdTIC))
 
   if(any(res[out_idx,"Class"] != "CTRL")){
@@ -94,4 +94,4 @@ checkInjection <- function(filepath,runinfo,plot = TRUE, parallel = FALSE)
   }
 
 
-  
+
