@@ -46,7 +46,7 @@ checkInjection <- function(filepath,runinfo,plot = TRUE, parallel = FALSE)
 
   if(parallel == TRUE){
     cluster = parallel::makePSOCKcluster(parallel::detectCores())
-    parallel::clusterExport(cluster,varlist = c("rawfiles", "xcmsRaw"))
+    parallel::clusterExport(cluster,varlist = c("rawfiles", "xcmsRaw"), envir = environment())
     TIC <- parallel::parSapply(cluster, rawfiles, function(x)(sum(xcmsRaw(x)@tic)))
     stopCluster(cluster);gc()
   }
