@@ -8,7 +8,7 @@
 #'
 #' @author Tom Wilson \email{tpw2@@bert.ibers.aber.uk}
 #' @export
-#'
+
 featureTable <- function(xcms_set)
 {
   
