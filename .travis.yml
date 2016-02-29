@@ -1,5 +1,25 @@
-# Sample .travis.yml for R projects
-
 language: r
-warnings_are_errors: true
+warnings_are_errors: false
 sudo: required
+bioc_required: true
+
+apt_packages:
+ - libnetcdf-dev
+ - udunits-bin
+ - libudunits2-dev
+ 
+r_binary_packages:
+ - ggplot2
+ - covr
+ - testthat
+ 
+bioc_packages:
+ - xcms
+
+after_success:
+ - Rscript -e 'covr::coveralls()'
+
+notifications:
+  email:
+    on_success: change
+    on_failure: change
