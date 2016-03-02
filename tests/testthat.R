@@ -1,4 +1,4 @@
 library(testthat)
 library(LCPRO)
 
-test_check("LCPRO")
+#test_check("LCPRO")
