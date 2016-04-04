@@ -2,7 +2,7 @@
 #'
 #' Load all of the xcmsSet's in the specified directory.
 #'
-#' @param path
+#' @param path directory containing xcmsSet's which were saved using \code{saveAll}
 #' @return NULL
 #'
 #' @author Tom Wilson \email{tpw2@@aber.ac.uk}

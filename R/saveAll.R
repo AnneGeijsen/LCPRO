@@ -2,7 +2,7 @@
 #'
 #' Save all of the xcmsSet's currently in the global environment (\code{.GlobalEnv}) into the specified directory.
 #'
-#' @param path
+#' @param path directory where xcmsSet's will be saved to
 #' @return NULL
 #'
 #' @author Tom Wilson \email{tpw2@@aber.ac.uk}
