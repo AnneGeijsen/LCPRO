@@ -11,7 +11,7 @@
 
 saveAll <- function(path)
 {
-  xsets <- Filter( function(x) 'xcmsSet' %in% class( get(x) ), ls() )
+  xsets <- Filter( function(x) 'xcmsSet' %in% class( get(x) ), ls(.GlobalEnv) )
   for(i in 1:length(xsets)){
     file <- paste(path,paste(xsets[i], ".RData", sep = ""), sep = "/")
     xset <- eval(parse(text = xsets[i]))
