@@ -17,7 +17,7 @@
 #' @author Tom Wilson \email{tpw2@@aber.ac.uk}
 #' @export
 
-compileMS2 <- function(fileName, save = FALSE)
+compileMS2 <- function(filename, save = FALSE)
   {
 
   rawFile <- openMSfile(filename)
