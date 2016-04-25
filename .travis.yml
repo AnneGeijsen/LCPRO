@@ -16,7 +16,7 @@ r_binary_packages:
 bioc_packages:
  - xcms
 
-github_packages:
+r_github_packages:
  - wilsontom/metProc
 
 after_success:
