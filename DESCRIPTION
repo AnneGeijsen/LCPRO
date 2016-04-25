@@ -10,6 +10,8 @@ Description: Various functions for processing and analysing metabolomics data
 Depends:
     xcms,
     ggplot2
+Imports:
+    metProc
 Suggests:
     testthat
 License: GPL (>= 2)

@@ -7,14 +7,17 @@ apt_packages:
  - libnetcdf-dev
  - udunits-bin
  - libudunits2-dev
- 
+
 r_binary_packages:
  - ggplot2
  - covr
  - testthat
- 
+
 bioc_packages:
  - xcms
+
+github_packages:
+  - wilsontom/metProc
 
 after_success:
  - Rscript -e 'covr::coveralls()'
