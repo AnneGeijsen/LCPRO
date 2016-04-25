@@ -4,7 +4,7 @@
 \alias{compileMS2}
 \title{Build dd FT-MS2 List}
 \usage{
-compileMS2(fileName, save = FALSE)
+compileMS2(filename, save = FALSE)
 }
 \arguments{
 \item{filename}{a raw \code{.mzML} or \code{.mzXML} file containing FT-MS1 and dd-FT-MS2 spectra only.}
