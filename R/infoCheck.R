@@ -73,5 +73,6 @@ infoCheck <- function(filepath, info)
     return(info)
   }
   if(ch == FALSE){
-    message("...check fail... this is most likely due to a naming conflict between info$file and files. Please Check Manuall!")
+    message("...check fail... this is most likely due to a naming conflict between info$file and files. Please Check Manually!")
+  }
   }

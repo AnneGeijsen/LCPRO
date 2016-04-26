@@ -7,7 +7,7 @@
 #'
 #' @author Tom Wilson \email{tpw2@@aber.ac.uk}
 #' @export
-#'
+
 variableQC <- function(xcms_set)
   {
 
