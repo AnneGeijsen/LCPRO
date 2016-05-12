@@ -12,7 +12,7 @@
 
 infoCheck <- function(filepath, info)
   {
-  files <- list.files(filepath, full = FALSE, pattern = c(".mzML | .mzXML"))
+  files <- list.files(filepath, full = FALSE, pattern = ".mzML|.mzXML")
 
 	if(length(files) != nrow(info)){
 		stop("Length of files and runinfo do not match")
@@ -57,7 +57,7 @@ infoCheck <- function(filepath, info)
 
     if("fileord" %in% names(info)){
        message(paste("file order information found in infofile,using for re-sorting", "\n"))
-      info <- info[order(info$fileord),]
+       info <- info[order(info$fileord),]
     }
 
     if(!("fileord" %in% names(info))){
