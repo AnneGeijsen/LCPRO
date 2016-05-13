@@ -34,4 +34,6 @@ dilutionCheck <- function(filepath, runinfo)
 
   qc_rep <- split_varQC <- lapply(split_fill, variableQC)
 
+  return(qc_rep)
+
   }
