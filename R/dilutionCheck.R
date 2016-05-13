@@ -5,12 +5,12 @@
 #' @param filepath the filepath containing raw (\code{.mzML, .mzXML}) files
 #' @param info a runinfo  \code{data.frame}. The \code{class} column should denote the dilution factor
 #' @param nCores a numeric value for the number of cores to utilise
-#'
+#' @return a \code{data.frame} with a quality control summary report
 #'
 #' @author Tom Wilson \email{tpw2@aber.ac.uk}
 #' @export
 
-dilutionCheck <- function(filepath, runinfo)
+dilutionCheck <- function(filepath, runinfo, nCores)
   {
   rawFiles <- list.files(filepath, full = TRUE, pattern = ".mzML|.mzXML")
 
@@ -23,7 +23,7 @@ dilutionCheck <- function(filepath, runinfo)
     split_info[[i]]$class <- as.factor(split_info[[i]]$class)
   }
 
-    split_peaks <- list()
+  split_peaks <- list()
   for(i in 1:length(split_files)){
         split_peaks[[i]] <- peakDet(split_files[[i]], split_info[[i]], nCores)
   }

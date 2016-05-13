@@ -56,7 +56,15 @@ featureTable <- function(xcms_set)
     QCme <- apply(peak_table,2,mean)
   }
 
-  feat_tab <- data.frame(feat_tab, RSD = QCval, Int_mean = QCme)
+  sn <- NULL
+  for(i in 1:length(neg_fill@groupidx)){
+    sn[[i]] <- neg_fill@peaks[neg_fill@groupidx[[i]], "sn"]
+  }
+
+  perc_filled <- lapply(sn, function(x)((length(which(is.na(x)))) / length(x)) * 100)
+
+
+  feat_tab <- data.frame(feat_tab, RSD = QCval, Int_mean = QCme, perc_infilled = round(unlist(perc_filled), digits = 2))
 
   return(feat_tab)
   }
