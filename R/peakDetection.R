@@ -31,7 +31,6 @@ peakDetection <- function(filepath, info, rtcor = TRUE)
 
   info <- infoCheck(filepath, info)
 
-#'@export
   peakDet <- function(x,y,nc){
   peaks_set <- xcmsSet(x, method = "centWave", ppm = 1.5, snthresh = 10, peakwidth = c(10,50),
                    integrate = 2, mzdiff = 0.001, snames = y$name, sclass = y$class, noise = 1000,
@@ -47,4 +46,3 @@ peakDetection <- function(filepath, info, rtcor = TRUE)
 
   return(peaks)
   }
-
