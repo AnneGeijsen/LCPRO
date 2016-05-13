@@ -4,14 +4,17 @@
 \alias{dilutionCheck}
 \title{Evaluate a QC dilution series}
 \usage{
-dilutionCheck(filepath, runinfo)
+dilutionCheck(filepath, runinfo, nCores)
 }
 \arguments{
 \item{filepath}{the filepath containing raw (\code{.mzML, .mzXML}) files}
 
-\item{info}{a runinfo  \code{data.frame}. The \code{class} column should denote the dilution factor}
-
 \item{nCores}{a numeric value for the number of cores to utilise}
+
+\item{info}{a runinfo  \code{data.frame}. The \code{class} column should denote the dilution factor}
+}
+\value{
+a \code{data.frame} with a quality control summary report
 }
 \description{
 Evaluate a QC dilution series
