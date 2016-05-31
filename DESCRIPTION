@@ -9,9 +9,11 @@ Description: Various functions for processing and analysing metabolomics data
     acquired with high resolution LCMS.
 Depends:
     xcms,
-    ggplot2
+    ggplot2,
+    parallel
 Imports:
-    metProc
+    metProc,
+    plyr
 Suggests:
     testthat
 License: GPL (>= 2)
