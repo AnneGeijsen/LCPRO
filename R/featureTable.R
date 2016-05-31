@@ -57,8 +57,8 @@ featureTable <- function(xcms_set)
   }
 
   sn <- NULL
-  for(i in 1:length(neg_fill@groupidx)){
-    sn[[i]] <- neg_fill@peaks[neg_fill@groupidx[[i]], "sn"]
+  for(i in 1:length(xcms_set@groupidx)){
+    sn[[i]] <- xcms_set@peaks[xcms_set@groupidx[[i]], "sn"]
   }
 
   perc_filled <- lapply(sn, function(x)((length(which(is.na(x)))) / length(x)) * 100)
