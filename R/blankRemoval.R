@@ -14,14 +14,6 @@
 #' @author Tom Wilson \email{tpw2@@aber.ac.uk}
 #' @export
 #'
-
-
-peaks_all <- featureTable(negFill)
-peaks_ctrl <- featureTable(negCFill)
-
-a <- blankRemoval(peaks_all, peaks_ctrl)
-
-
 blankRemoval <- function(peaks_all, peaks_ctrl){
 
   ## look for exact matches first

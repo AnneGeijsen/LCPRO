@@ -31,14 +31,10 @@ peakDetection <- function(filepath, info, rtcor = TRUE)
 
   info <- infoCheck(filepath, info)
 
-  peakDet <- function(x,y,nc){
-  peaks_set <- xcmsSet(x, method = "centWave", ppm = 1.5, snthresh = 10, peakwidth = c(10,50),
-                   integrate = 2, mzdiff = 0.001, snames = y$name, sclass = y$class, noise = 1000,
-                   prefilter = c(3,1000), nSlaves = nc)
-  return(peaks_set)
-  }
+  peaks_set <- xcmsSet(rawFiles, method = "centWave", ppm = 1.5, snthresh = 10, peakwidth = c(10,50),
+                   integrate = 2, mzdiff = 0.001, snames = info$name, sclass = info$class, noise = 1000,
+                   prefilter = c(3,1000), nSlaves = nCores)
 
-  peaks <- .peakDet(rawFiles, info,nCores)
 
   if(isTRUE(rtcor)){
     peaks <- retcor(peaks, method = "obiwarp", profStep = 0.1)
