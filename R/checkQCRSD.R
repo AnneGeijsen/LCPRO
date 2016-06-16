@@ -15,7 +15,7 @@
 checkQCRSD <- function(peak_table, info)
   {
   if(nrow(info) > nrow(peak_table)){
-    stop("...more rows in runinif than in peak table", call. = FALSE)
+    stop("...more rows in runinifo than in peak table", call. = FALSE)
   }
 
   if(nrow(peak_table) > nrow(info)){
@@ -44,10 +44,9 @@ checkQCRSD <- function(peak_table, info)
 
   QC_RSD <- RSD(QC_table)
 
-  QC_RSD <- data.frame(QC_RSD)
-  names(QC_RSD) <- "RSD"
+  QC_RSD <- data.frame("RSD" = QC_RSD)
 
-  class("QC_RSD") <- "QCCV"
+  class(QC_RSD) <- "QCCV"
 
   return(QC_RSD)
   }

@@ -35,7 +35,7 @@ xcmsRawSet <- function(filepath, info, ppm, snthresh, peakwidth)
   raw_imports <- parLapply(cluster, rawFiles, xcmsRaw, profstep = 1.0)
 
   peaks <- parLapply(cluster, raw_imports, findPeaks.centWave,
-                      ppm = ppm, snthresh = sntrhresh, peakwidth = peakwidth,
+                      ppm = ppm, snthresh = snthresh, peakwidth = peakwidth,
                         mzdiff = 0.001,integrate = 2, noise = 1000,
                           prefilter = c(3,1000))
 
@@ -63,5 +63,3 @@ xcmsRawSet <- function(filepath, info, ppm, snthresh, peakwidth)
 
   return(xset)
   }
-
-
