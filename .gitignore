@@ -3,3 +3,5 @@ LCPRO.Rproj
 rules.xlsx
 .Rproj.user
 .Rhistory
+inst/
+R/qcpeaks.R
