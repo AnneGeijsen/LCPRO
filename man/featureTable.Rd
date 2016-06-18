@@ -4,10 +4,13 @@
 \alias{featureTable}
 \title{Format xcmsSet into Feature table}
 \usage{
-featureTable(xcms_set)
+featureTable(xcms_set, cls = NULL)
 }
 \arguments{
 \item{xcms_set}{a \code{xcmsSet} containing peak group information}
+
+\item{cls}{an optional parameter. If a vecotr of \code{class} is given, then this will be used instead of the class information
+in \code{xcms_set@phenoData$class}}
 }
 \value{
 A \code{data.frame} containing feature group details

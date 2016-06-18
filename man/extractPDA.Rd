@@ -12,7 +12,7 @@ extractPDA(filepath, savedir)
 \item{savedir}{location to save extracted PDA data to}
 }
 \description{
-Extract the UV Diodearray data from a \code{.mzML} file and save into a much small \code{.RData} file
+Extract the UV Diodearray data from a \code{.mzML} file and save into a much smaller \code{.RData} file
 }
 \author{
 Tom Wilson \email{tpw2@aber.ac.uk}
