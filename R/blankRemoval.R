@@ -13,7 +13,7 @@
 #' @seealso featureTable
 #' @author Tom Wilson \email{tpw2@@aber.ac.uk}
 #' @export
-#'
+
 blankRemoval <- function(peaks_all, peaks_ctrl){
 
   ## look for exact matches first
